@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Колорист Кабаченко Е. И. | Санкт-Петербург</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .portfolio-hover::after {
+  content: "Посмотреть результат";
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.2);
+  color:#fff;
+  opacity:0;
+  transition:0.4s;
+}
+
+.portfolio-hover:hover::after {
+  opacity:1;
+}
+
+    .service-card:hover {
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.06),
+    0 0 0 1px rgba(197,160,89,0.3);
+}
+
+   .counter {
+  transition: transform 0.3s ease;
+}
+
+.counter.finished {
+  transform: scale(1.05);
+}
+
+    .btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.btn-gold:hover::before {
+  transform: translateX(100%);
+}
+
+    body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(197,160,89,0.04), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 50%),
+    #FAF9F6;
+}
+
+    /* ===== SERVICE CARDS ===== */
+    
+.service-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-color: rgba(197,160,89,0.4);
+}
+
+ .before-after {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-before,
+.img-after {
+  width: 100%;
+  display: block;
+}
+
+.img-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #C5A059;
+  cursor: ew-resize;
+}
+
+    #mobileMenu {
+  transition: opacity 0.3s ease;
+}
+
+#mobileMenu.show {
+  display: block;
+}
+.service-item {
+  padding: 20px 0;
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.service-item:hover {
+  background-color: rgba(197,160,89,0.06);
+  transform: translateX(4px);
+  padding-left: 12px;
+}
+
+    /* ===== STICKY HEADER BLUR ===== */
+#siteHeader {
+  background: rgba(250, 249, 246, 0.6); /* цвет фона сайта */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+}
+
+#siteHeader.scrolled {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(250, 249, 246, 0.85);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+/* ===== QUIZ ANIMATIONS ===== */
+.quiz-option {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    opacity 0.25s ease;
+  cursor: pointer;
+}
+
+.quiz-option:hover {
+  background-color: #f6f2ec;
+}
+
+.quiz-option.active {
+  background-color: #f6f2ec;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transform: scale(0.98);
+}
+
+.quiz-option.dimmed {
+  opacity: 0.35;
+}
+
+.quiz-step {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+  /* ===== GLASS HEADER ===== */
+#siteHeader {
+  background: rgba(250, 249, 246, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+#siteHeader.scrolled {
+  background: rgba(250, 249, 246, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+    :root{
+      --bg:#FAF9F6;
+      --text:#111111;
+      --gold:#C5A059;
+      --muted:#9A9A9A;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-tap-highlight-color:transparent;
+      scroll-behavior:smooth;
+    }
+
+    /* Headline font */
+    .font-serif { font-family: "Playfair Display", serif; }
+
+    /* Fade in */
+   .fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* Simple card */
+    .card { background: white; border-radius:8px; box-shadow: 0 6px 18px rgba(10,10,10,0.04); overflow:hidden; }
+
+    /* Portfolio before/after boxes */
+    .portfolio-box { border:1px solid rgba(0,0,0,0.05); height:420px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#fff; }
+
+    /* "После" badge */
+    .badge-gold { background:var(--gold); color:#fff; padding:6px 10px; font-weight:600; border-radius:4px; font-size:13px; position:absolute; right:12px; top:12px; }
+
+    /* Header nav */
+    .nav-link { letter-spacing:2px; font-size:13px; color:var(--text); }
+
+    /* Hero styles */
+    .hero-title { font-size:72px; line-height:0.92; font-weight:600; }
+    @media (max-width: 768px){ .hero-title { font-size:40px; } }
+
+    /* Small helper */
+    .muted { color:var(--muted); }
+
+    /* Input */
+    input, textarea, select { background:transparent; border:none; border-bottom:1px solid rgba(0,0,0,0.08); padding:12px 6px; outline:none; width:100%; color:var(--text); }
+    label { font-size:12px; color:var(--muted); letter-spacing:1px; display:block; margin-bottom:8px; }
+
+    /* Footer */
+    footer { background:#151313; color:#ddd; }
+
+    /* smooth image fallback */
+    img { display:block; max-width:100%; height:auto; object-fit:cover; }
+
+    /* small decorative circles on hero */
+    .hero-decor { position:absolute; border-radius:50%; border:1px solid rgba(0,0,0,0.04); pointer-events:none; }
+  .nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link.active-link {
+  color: #C5A059;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: #C5A059;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.25s ease;
+}
+
+.nav-link.active-link::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.btn,
+button {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.btn:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.quiz-option {
+  transition: 
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.quiz-option:hover {
+  background-color: rgba(197,160,89,0.05);
+  transform: translateY(-1px);
+}
+
+.quiz-option.active {
+  background-color: rgba(197,160,89,0.12);
+  border-color: #C5A059;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+.nav-link {
+  transition: 
+    color 0.25s ease,
+    letter-spacing 0.25s ease;
+}
+
+.nav-link.active-link {
+  letter-spacing: 0.04em;
+}
+/* ===== NAV LINK INTERACTION ===== */
+.nav-link {
+  position: relative;
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease,
+    letter-spacing 0.25s ease;
+}
+
+/* hover — для всех пунктов */
+.nav-link:hover {
+  color: #C5A059;
+  transform: translateY(-1px);
+}
+
+/* active section — как сейчас */
+.nav-link.active-link {
+  color: #C5A059;
+  letter-spacing: 0.04em;
+}
+
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: #C5A059;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* underline при hover */
+.nav-link:hover::after {
+  opacity: 0.6;
+  transform: scaleX(1);
+}
+
+/* underline при active */
+.nav-link.active-link::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+section {
+  scroll-margin-top: 120px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+    
+    @media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+    
+/* ===== SERVICE HOVER ===== */
+.service-item {
+  padding: 20px 0;
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.service-item:hover {
+  background-color: rgba(197,160,89,0.06);
+  transform: translateX(4px);
+  padding-left: 12px;
+}
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(4px);
+  transition: all 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-title span.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.portfolio-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.portfolio-hover:hover .portfolio-img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+.hero-title {
+  line-height: 0.85;
+}
+    .hero-title .line:last-child {
+  margin-top: -6px;
+}
+
+
+.hero-title .line {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.hero-title {
+  line-height: 0.9;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="siteHeader" class="w-full fixed top-0 left-0 z-40 transition-all duration-300">
+    <div class="header-inner max-w-6xl mx-auto px-8 flex items-center justify-between">
+      <div class="font-serif text-xl">
+        <span class="mr-1">Колорист</span><span class="text-[#C5A059]">Кабаченко Е.И.</span>
+      </div>
+      <nav class="space-x-6 hidden md:flex items-center">
+        <a class="nav-link" href="#services">УСЛУГИ</a>
+        <a class="nav-link" href="#works">РАБОТЫ</a>
+        <a class="nav-link" href="#quiz">ПОДБОР ЦВЕТА</a>
+        <a class="nav-link" href="#about">О МАСТЕРЕ</a>
+      </nav>
+      <div>
+        <a href="#booking" class="px-2 py-1 border border-gray-300 rounded text-sm">ЗАПИСЬ</a>
+        <button id="burger" class="md:hidden text-xl">☰</button>
+      </div>
+    </div>
+  </header>
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black/30 backdrop-blur-md"></div>
+
+  <div class="relative bg-[#FAF9F6] h-full w-4/5 max-w-sm p-8">
+    <nav class="flex flex-col space-y-6 text-lg">
+      <a href="#services" class="nav-link">УСЛУГИ</a>
+      <a href="#works" class="nav-link">РАБОТЫ</a>
+      <a href="#quiz" class="nav-link">ПОДБОР ЦВЕТА</a>
+      <a href="#about" class="nav-link">О МАСТЕРЕ</a>
+    </nav>
+  </div>
+</div>
+
+
+  
+  <!-- HERO -->
+  <main class="pt-28">
+    <section class="relative overflow-hidden">
+      <!-- decorative circles -->
+      <div class="hero-decor" style="width:520px;height:520px;left:-120px;top:40px;opacity:.25"></div>
+      <div class="hero-decor" style="width:380px;height:380px;right:-150px;top:60px;opacity:.18"></div>
+
+      <div class="max-w-6xl mx-auto px-6 py-32 text-center relative">
+        <h2 class="muted tracking-widest mb-4">САНКТ-ПЕТЕРБУРГ</h2>
+      <h1 class="hero-title font-serif mb-8">
+  <span class="line block">Искусство</span>
+  <span class="line block text-[#C5A059]">цвета</span>
+</h1>
+
+
+        <p class="muted mb-10">Профессиональный колорист. Натуральные оттенки, долгосрочный результат.</p>
+
+        <div class="flex gap-4 justify-center">
+          <a href="#booking" class="px-8 py-3 bg-[#111111] text-white rounded-md shadow hover:opacity-80 transition">Записаться</a>
+          <a href="#quiz" class="px-8 py-3 border border-gray-300 rounded-md hover:bg-[#f4efe9] transition">Подобрать оттенок</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="fade-in py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-serif text-4xl mb-16 text-center">Услуги и прайс</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- CARD 1 -->
+      <div class="service-card p-8 rounded-2xl bg-white border border-gray-100">
+        <h4 class="text-xl font-medium mb-4">Окрашивание волос</h4>
+        <p class="muted mb-6">Длительность: 2–3 ч</p>
+        <div class="text-2xl font-serif text-[#C5A059]">2500 ₽</div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="service-card p-8 rounded-2xl bg-white border border-gray-100">
+        <h4 class="text-xl font-medium mb-4">Стрижка волос</h4>
+        <p class="muted mb-6">Длительность: 1 ч</p>
+        <div class="text-2xl font-serif text-[#C5A059]">1700 ₽</div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="service-card p-8 rounded-2xl bg-white border border-gray-100">
+        <h4 class="text-xl font-medium mb-4">Укладка волос</h4>
+        <p class="muted mb-6">Длительность: 40 мин</p>
+        <div class="text-2xl font-serif text-[#C5A059]">1000 ₽</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- PORTFOLIO / WORKS -->
+    <section id="works" class="max-w-6xl mx-auto px-6 py-20 fade-in">
+      <h2 class="font-serif text-4xl text-center mb-10">Портфолио</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Item 1 -->
+        <div class="relative">
+          <div class="portfolio-box">
+            <!-- left = before, right = after (two-column look) -->
+            <div class="w-1/2 h-full">
+             <img src="before.jpg" class="img-before">
+            <div class="slider"></div>
+           </div>
+
+            <div class="w-1/2 h-full">
+              <img src="imagesportfolio1-after.jpg" alt="After" onerror="this.style.opacity=.08; this.style.background='#f8f8f8'">
+              <div class="badge-gold">ПОСЛЕ</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative">
+          <div class="portfolio-box">
+            <div class="w-1/2 h-full" style="border-right:1px solid rgba(0,0,0,0.06)">
+              <img src="imagesportfolio2-before.jpg" alt="Before" onerror="this.style.opacity=.08; this.style.background='#f0f0f0'">
+              <div style="position:absolute; left:18px; top:18px; background:#333; color:#fff; padding:6px 8px; font-size:12px; border-radius:4px">ДО</div>
+            </div>
+            <div class="w-1/2 h-full">
+              <img src="imagesportfolio2-after.jpg" alt="After" onerror="this.style.opacity=.08; this.style.background='#f8f8f8'">
+              <div class="badge-gold">ПОСЛЕ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ / LEAD MAGNET -->
+    <section id="quiz" class="max-w-4xl mx-auto px-6 py-20 fade-in">
+      <h2 class="font-serif text-4xl text-center mb-6">Подбор оттенка</h2>
+      <p class="muted text-center mb-8">Пройдите короткий тест, чтобы мы подобрали технику окрашивания и палитру.</p>
+
+      <div id="quizCard" class="card p-8">
+        <!-- Step 1 -->
+        <div class="quiz-step" data-step="1">
+          <div class="text-sm muted mb-3">ШАГ 1 ИЗ 3</div>
+          <h3 class="font-serif text-2xl mb-6">Ваш текущий цвет волос?</h3>
+
+          <div class="space-y-4">
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Натуральный</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Окрашенный тёмный</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Осветлённый / Блонд</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="quiz-step hidden" data-step="2">
+          <div class="text-sm muted mb-3">ШАГ 2 ИЗ 3</div>
+          <h3 class="font-serif text-2xl mb-6">Какой результат вы хотите?</h3>
+
+          <div class="space-y-4">
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Естественный оттенок</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Яркий / модный</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Переходный (балаяж/омбре)</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="quiz-step hidden" data-step="3">
+          <div class="text-sm muted mb-3">ШАГ 3 ИЗ 3</div>
+          <h3 class="font-serif text-2xl mb-6">Какой у вас бюджет на процедуру?</h3>
+
+          <div class="space-y-4">
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Эконом</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Стандарт</button>
+            <button class="quiz-option w-full text-left p-4 border border-gray-100">Премиум</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="quizResult" class="hidden mt-6">
+          <h4 class="font-serif text-xl mb-3">Ваш подбор готов</h4>
+          <p class="muted mb-4" id="quizSummary">Введите email для получения идеальной услуги, исходя из ваших  ответов</p>
+
+          <form id="leadForm" class="space-y-4">
+            <div>
+              <label>Имя</label>
+              <input type="text" name="name" placeholder="Ваше имя" required />
+            </div>
+            <div>
+               <div>
+              <label>Телефон</label>
+              <input type="text" name="phone" placeholder="+7 (___) ___-__-__" required />
+             
+          </div>
+            </div>
+                <div>
+              <label>Email</label>
+              <input type="email" name="email" placeholder="example@mail.ru" unrequired />
+            </div>
+            <div>
+              <button type="submit" class="w-full py-3 bg-[#C5A059] text-white rounded">Получить рекомендации</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-20 fade-in">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="card portfolio-box p-4 h-auto">
+            <img src="imagesmaster.jpg" alt="Мастер Кабаченко Е. И." onerror="this.style.opacity=.08; this.style.background='#f0f0f0'">
+          </div>
+        </div>
+        <div>
+          <h3 class="font-serif text-4xl mb-4">Елена <span class="italic">Кабаченко</span></h3>
+          <p class="muted mb-4">Основатель, топ-колорист. Более 10 лет изучаю химию волос и техники окрашивания. Работаю по философии Quiet Luxury — естественные оттенки, долгосрочный результат.</p>
+          <div class="flex gap-8 mt-6">
+            <div>
+              <div class="font-serif text-lg text-[#C5A059]"><span class="counter" data-target="1500">0</span>+</div>
+              <div class="muted text-sm">довольных клиентов</div>
+            </div>
+            <div>
+              <div class="font-serif text-lg text-[#C5A059]">10 лет</div>
+              <div class="muted text-sm">опыта</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="py-20">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div class="text-white bg-[#111] p-10 rounded">
+          <h3 class="font-serif text-4xl mb-4">Запись</h3>
+          <p class="muted mb-6" style="color:rgba(255,255,255,0.75)">Оставьте заявку — мы свяжемся в течение 30 минут для подтверждения времени.</p>
+
+          <ul class="space-y-3 text-sm">
+            <li>Санкт-Петербург, просп. Металлистов, 115</li>
+            <li>+7 (905) 265-95-74</li>
+            <li>Instagram / WhatsApp / Telegram</li>
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <form id="bookingForm" class="space-y-4">
+            <div>
+              <label>Ваше имя</label>
+              <input type="text" name="name" placeholder="Имя" required />
+            </div>
+            <div>
+              <label>Телефон</label>
+              <input type="text" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </div>
+ 
+
+            <div>
+              <label>Желаемая услуга</label>
+              <select name="service">
+                <option>Сложное окрашивание</option>
+                <option>Тонирование</option>
+                <option>Стрижка</option>
+              </select>
+            </div>
+            <div>
+              <button class="w-full py-3 bg-[#C5A059] text-white rounded" type="submit">Отправить заявку</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-sm text-[#cfc9c4]">© 2024 Колорист Кабаченко Е. И.</div>
+      <div class="space-x-6 mt-4 md:mt-0">
+        <a class="text-[#cfc9c4]" href="#">INSTAGRAM</a>
+        <a class="text-[#cfc9c4]" href="#">TELEGRAM</a>
+        <a class="text-[#cfc9c4]" href="#">WHATSAPP</a>
+      </div>
+    </div>
+  </footer>
+    
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+// ===============================
+// Mobile menu toggle
+// ===============================
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+  });
+
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu || e.target.closest('a')) {
+      mobileMenu.classList.remove('show');
+    }
+  });
+}
+
+// ===============================
+// Active menu link on scroll (SAFE)
+// ===============================
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveLink() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+
+    if (scrollPos >= top && scrollPos < top + height) {
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          'active-link',
+          link.getAttribute('href') === `#${id}`
+        );
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveLink, { passive: true });
+updateActiveLink();
+
+
+  // ===============================
+  // Sticky header blur on scroll
+  // ===============================
+  const header = document.getElementById('siteHeader');
+
+  if (header) {
+    const toggleHeader = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    toggleHeader();
+    window.addEventListener('scroll', toggleHeader, { passive: true });
+  }
+
+  // ===============================
+  // Parallax for hero title
+  // ===============================
+  const hero = document.getElementById('heroTitle');
+
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const offset = Math.min(window.scrollY * 0.18, 60);
+      hero.style.transform = `translateY(${offset}px)`;
+    }, { passive: true });
+  }
+
+  // ===============================
+  // Fade-in on scroll
+  // ===============================
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    fadeObserver.observe(el);
+  });
+  // ===============================
+  // QUIZ LOGIC
+  // ===============================
+  const card = document.getElementById('quizCard');
+  if (card) {
+    const steps = card.querySelectorAll('.quiz-step');
+    let currentStep = 0;
+    const answers = [];
+
+    function showStep(index) {
+      steps.forEach((s, i) => {
+        s.classList.toggle('hidden', i !== index);
+        s.classList.remove('fade-out');
+      });
+    }
+
+    showStep(0);
+
+    card.addEventListener('click', (e) => {
+      const option = e.target.closest('.quiz-option');
+      if (!option) return;
+
+      const step = option.closest('.quiz-step');
+      const options = step.querySelectorAll('.quiz-option');
+
+      options.forEach(o => {
+        o.classList.add('dimmed');
+        o.classList.remove('active');
+      });
+
+      option.classList.remove('dimmed');
+      option.classList.add('active');
+
+      answers[currentStep] = option.innerText.trim();
+      step.classList.add('fade-out');
+
+      setTimeout(() => {
+        currentStep++;
+        if (currentStep < steps.length) {
+          showStep(currentStep);
+        } else {
+          steps.forEach(s => s.classList.add('hidden'));
+          const result = document.getElementById('quizResult');
+          const summary = document.getElementById('quizSummary');
+          if (result && summary) {
+            result.classList.remove('hidden');
+            summary.innerText =
+              `Вы выбрали: ${answers.join(' • ')}. Рекомендуем индивидуальную консультацию.`;
+          }
+        }
+      }, 450);
+    });
+  }
+
+  // ===============================
+  // LEAD FORM → n8n
+  // ===============================
+  const leadForm = document.getElementById('leadForm');
+  if (leadForm) {
+    leadForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+const data = {
+  name: this.name?.value || '',
+  email: this.email?.value || '',
+  quiz: document.getElementById('quizSummary')?.innerText || ''
+};
+      try {
+        await fetch('https://artem2010.app.n8n.cloud/webhook-test/764e3ba2-d92d-4b23-a7de-aa8f9ed1b696', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+        this.reset();
+      } catch (err) {
+        console.error(err);
+        alert('Ошибка отправки. Попробуйте позже.');
+      }
+    });
+  }
+// ===============================
+// BOOKING FORM → n8n
+// ===============================
+const bookingForm = document.getElementById('bookingForm');
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const data = {
+      name: this.name?.value || '',
+      phone: this.phone?.value || '',
+      email: this.email?.value || '',
+      service: this.service?.value || ''
+    };
+
+    if (!data.phone) {
+      alert('Введите телефон');
+      return;
+    }
+
+    try {
+      await fetch('https://artem2010.app.n8n.cloud/webhook-test/lead-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      alert('Спасибо! Заявка отправлена.');
+      this.reset();
+    } catch (err) {
+      console.error(err);
+      alert('Ошибка отправки.');
+    }
+  });
+}
+
+// ===============================
+// Smooth scroll with offset
+// ===============================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerOffset = 120;
+    const y =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      headerOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
+// ===============================
+// Counter animation
+// ===============================
+const counters = document.querySelectorAll('.counter');
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    const el = entry.target;
+    const target = +el.getAttribute('data-target');
+    let current = 0;
+    const increment = target / 240;
+
+const duration = 2000; // 2 секунды
+const startTime = performance.now();
+
+const update = (currentTime) => {
+  const progress = Math.min((currentTime - startTime) / duration, 1);
+  const ease = 1 - Math.pow(1 - progress, 3);
+  el.innerText = Math.floor(ease * target);
+
+  if (progress < 1) {
+    requestAnimationFrame(update);
+  }
+};
+
+requestAnimationFrame(update);
+
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(c => counterObserver.observe(c));
+const clickSound = document.getElementById('clickSound');
+
+document.querySelectorAll('button, .service-card, a').forEach(el => {
+  el.addEventListener('click', () => {
+    if (!clickSound) return;
+    clickSound.volume = 0.08; // очень тихо
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
+});
+
+
+// ===============================
+// HERO TEXT REVEAL (FIXED)
+// ===============================
+const heroLines = document.querySelectorAll('.hero-title .line');
+
+heroLines.forEach((line, i) => {
+  setTimeout(() => {
+    line.classList.add('show');
+  }, i * 300);
+});
+
+// ===============================
+// Hero parallax on mouse move (SAFE)
+// ===============================
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 15;
+  const y = (e.clientY / window.innerHeight - 0.5) * 15;
+
+  document.querySelectorAll('.hero-decor').forEach(el => {
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+});
+    
+</script>
+<audio id="clickSound" preload="auto">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
